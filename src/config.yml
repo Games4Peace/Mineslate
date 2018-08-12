@@ -1,0 +1,23 @@
+groups_language_settings:
+  school1:
+    group_priority: '2'
+    username_regex: g4p[0,1][0-9]
+    group_language: he
+  school2:
+    group_priority: '2'
+    username_regex: g4p[2,3][0-9]
+    group_language: ar
+  admins:
+    group_priority: '1'
+    username_regex: '.*'
+    group_language: en
+
+yandex_api_keys:
+  - trnsl.1.1.20180805T184931Z.0a6ed043d4049c15.3a0cc5d01906c0124ddead9386ed5fa48944ed42
+  - trnsl.1.1.20180811T195650Z.78142bb2fc7b383a.63e0126be52d0c3815ebdbe3baa5a6663f9e9b59
+
+local_translation_dict:
+  en:
+    בוא: Come on
+  ar:
+    בוא: تعال

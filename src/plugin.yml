@@ -1,0 +1,10 @@
+name: MineSlate
+version: 1.0.0
+author: Nir Vaknin
+main: org.games4peace.mineslate.Main
+api-version: 1.13
+
+permissions:
+  MineSlate.globalListen:
+    description: Allows a player to listen to all char disregarding chat groups
+    default: op
