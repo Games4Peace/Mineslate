@@ -2,19 +2,16 @@ package org.games4peace.mineslate.translation;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.google.gson.JsonSyntaxException;
 import org.bukkit.Bukkit;
-import org.games4peace.mineslate.MineSlateConfig;
+import org.games4peace.mineslate.MineslateConfig;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.*;
-import java.util.logging.FileHandler;
 import java.util.logging.Level;
 
 public class YandexTranslator extends Translator {
@@ -32,7 +29,7 @@ public class YandexTranslator extends Translator {
         _apiKeys = new HashSet<>();
         _badApiKeys = new HashSet<>();
 
-        Object apiKeysObj = MineSlateConfig.getByPath(CONFIG_API_KEYS);
+        Object apiKeysObj = MineslateConfig.getByPath(CONFIG_API_KEYS);
         try {
             _apiKeys = (Collection<String>) apiKeysObj;
         } catch (Exception e) {

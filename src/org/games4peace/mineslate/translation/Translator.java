@@ -1,6 +1,6 @@
 package org.games4peace.mineslate.translation;
 
-import org.games4peace.mineslate.MineSlateConfig;
+import org.games4peace.mineslate.MineslateConfig;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,13 +9,13 @@ public abstract class Translator {
     private Map<String, Map<String, String>> translationCache;
 
     public Translator() {
-        translationCache = MineSlateConfig.getLocalTranslationDict();
+        translationCache = MineslateConfig.getLocalTranslationDict();
     }
 
     public String translate(String msg, String receivingPlayerName) {
         String translation = null;
 
-        String language = MineSlateConfig.getLanguageForUsername(receivingPlayerName);
+        String language = MineslateConfig.getLanguageForUsername(receivingPlayerName);
         if(language != null) {
             translation = cacheTranslate(msg, language);
             if(translation == null) {

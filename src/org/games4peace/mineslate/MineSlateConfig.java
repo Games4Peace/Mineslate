@@ -8,7 +8,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import java.util.*;
 import java.util.logging.Level;
 
-public class MineSlateConfig {
+public class MineslateConfig {
     private static final String GROUPS_LANGUAGE_SETTINGS = "groups_language_settings";
     private static final String GROUP_PRIORITY = "group_priority";
     private static final String GROUP_USERNAME_REGEX = "username_regex";
@@ -18,7 +18,7 @@ public class MineSlateConfig {
 
     private static FileConfiguration _config;
 
-    private MineSlateConfig(){}
+    private MineslateConfig(){}
 
     public static void initConfig(FileConfiguration config){
         _config = config;
