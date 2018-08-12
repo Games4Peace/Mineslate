@@ -1,29 +1,38 @@
 package org.games4peace.mineslate;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Score;
+import org.bukkit.scoreboard.Scoreboard;
 import org.games4peace.mineslate.translation.Translator;
 
 import java.util.Set;
 import java.util.stream.Collectors;
 
 public class GroupChatHandler implements Listener {
-    private final String GLOBAL_LISTEN_PERMISSION = "MineSlate.globalListen";
+    private final String GLOBAL_LISTEN_PERMISSION = "Mineslate.globalListen";
+    private final String CHAT_GROUP_OBJECTIVE = "ms_chatGroup";
 
     private Translator _translator;
 
     public GroupChatHandler(Translator translator) {
         _translator = translator;
+
+        Scoreboard scoreboard = Bukkit.getScoreboardManager().getMainScoreboard();
+        Objective objective = scoreboard.getObjective(CHAT_GROUP_OBJECTIVE);
+        if(objective == null) {
+            scoreboard.registerNewObjective(CHAT_GROUP_OBJECTIVE, "dummy", CHAT_GROUP_OBJECTIVE);
+        }
     }
 
     // Return the chat group of "player"
     private int getChatGroup(Player player) {
         int chatGroup = 0;
-        Objective objective = player.getScoreboard().getObjective("ms_chatGroup");
+        Objective objective = player.getScoreboard().getObjective(CHAT_GROUP_OBJECTIVE);
 
         // If the objective exists and is set for "player"
         if(objective != null) {
